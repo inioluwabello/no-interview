@@ -1,6 +1,11 @@
+'use client';
 import React from 'react';
 
 const Hero: React.FC = () => {
+  const handleGetStartedClick = () => {
+    window.location.href = '/getstarted';
+  };
+
   return (
     <section className="bg-blue-900 text-white py-20 text-center">
       <div className="container mx-auto px-4">
@@ -8,7 +13,10 @@ const Hero: React.FC = () => {
         <p className="text-xl mb-8">
           The platform where companies hire without interviews and job seekers land jobs based on their verified skills.
         </p>
-        <button className="bg-white text-blue-900 px-6 py-3 font-semibold rounded-full">
+        <button
+          className="bg-white text-blue-900 px-6 py-3 font-semibold rounded-full"
+          onClick={handleGetStartedClick}
+        >
           Get Started
         </button>
       </div>
