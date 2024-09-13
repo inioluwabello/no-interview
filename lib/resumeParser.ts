@@ -6,7 +6,7 @@ export const parseResume = async (file: File) => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve({
-        name: 'John Doe',
+        name: 'John Doe' + file.name,
         email: 'john.doe@example.com',
         skills: ['JavaScript', 'React', 'Node.js'],
         experience: [

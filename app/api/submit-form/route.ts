@@ -11,7 +11,8 @@ export async function POST(request: Request) {
 
   try {
     // Handle form data
-    const { fullName, resume } = formData;
+    const { fullName } = formData;
+    // const { fullName, resume } = formData;
 
     // Upload resume to S3
     const fileUrl = await uploadResume(resumeFile);
@@ -28,8 +29,13 @@ export async function POST(request: Request) {
     });
 
     return NextResponse.json({ success: true });
-  } catch (error: any) {
-    console.error('Error handling form submission:', error);
-    return NextResponse.json({ success: false, error: error.message });
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      console.error('Error handling form submission:', error);
+      return NextResponse.json({ success: false, error: error.message });
+    } else {
+      console.error('Unknown error:', error);
+      return NextResponse.json({ success: false, error: 'Unknown error' });
+    }
   }
 }
