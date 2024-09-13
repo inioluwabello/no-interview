@@ -1,5 +1,5 @@
 // app/jobseeker/page.tsx
-
+'use client'
 import React, { useState } from 'react';
 import { parseResume } from '@/lib/resumeParser';
 import { uploadResume } from '@/lib/awsS3';
