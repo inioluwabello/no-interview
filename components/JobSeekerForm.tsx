@@ -8,11 +8,11 @@ const JobSeekerForm: React.FC = () => {
     const [fullName, setFullName] = useState('');
     const [resumeFile, setResumeFile] = useState<File | null>(null);
 
-    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        if (e.target.files) {
-            setResumeFile(e.target.files[0]);
-        }
-    };
+    // const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    //     if (e.target.files) {
+    //         setResumeFile(e.target.files[0]);
+    //     }
+    // };
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
