@@ -4,6 +4,7 @@ import NextAuth from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
 import LinkedInProvider from 'next-auth/providers/linkedin';
 import AppleProvider from 'next-auth/providers/apple';
+import { NextApiRequest, NextApiResponse } from 'next';
 
 export const authOptions = {
   providers: [
@@ -23,6 +24,6 @@ export const authOptions = {
   secret: process.env.NEXTAUTH_SECRET,
 };
 
-export default async function handler(req: any, res: any) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   return NextAuth(req, res, authOptions);
 }
