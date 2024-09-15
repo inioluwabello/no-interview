@@ -3,7 +3,7 @@ import React from 'react';
 
 const Hero: React.FC = () => {
   const handleGetStartedClick = () => {
-    window.location.href = '/getstarted';
+    window.alert("Coming soon")
   };
 
   return (
