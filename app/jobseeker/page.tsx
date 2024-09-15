@@ -2,7 +2,6 @@
 'use client'
 import React, { useState } from 'react';
 import { parseResume } from '@/lib/resumeParser';
-import { uploadResume } from '@/lib/awsS3';
 
 const JobSeekerForm: React.FC = () => {
   const [fullName, setFullName] = useState('');
@@ -17,7 +16,7 @@ const JobSeekerForm: React.FC = () => {
 
     try {
       // Upload the resume to S3
-      const fileUrl = await uploadResume(resumeFile);
+      const fileUrl = ""; //await uploadResume(resumeFile);
 
       // Parse the resume
       const parsedData = await parseResume(resumeFile);
